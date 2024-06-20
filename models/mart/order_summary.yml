@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: order_summary
+    description: "Aggregates payment information for each order including total successful payments and count of failed payments."
+    columns:
+      - name: order_id
+        description: "The unique identifier for each order."
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        description: "The unique identifier for each customer."
+        tests:
+          - not_null
+
+      - name: order_date
+        description: "The date when the order was placed."
+        tests:
+          - not_null
+
+      - name: order_status
+        description: "The status of the order, e.g., placed, shipped, completed, etc."
+        tests:
+          - not_null
+
+      - name: total_successful_payments
+        description: "The total amount of successful payments for the order."
+        tests:
+          - not_null
+
+      - name: failed_payments
+        description: "The count of failed payment attempts for the order."
+        tests:
+          - not_null

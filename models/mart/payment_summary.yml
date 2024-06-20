@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: payment_summary
+    description: "Summarizes payment information for each customer including total amount, number of successful payments, and number of failed payments."
+    columns:
+      - name: customer_id
+        description: "The unique identifier for each customer."
+        tests:
+          - not_null
+          - unique
+
+      - name: total_amount
+        description: "The total amount of successful payments for each customer."
+        tests:
+          - not_null
+
+      - name: successful_payments
+        description: "The count of successful payment attempts for each customer."
+        tests:
+          - not_null
+
+      - name: failed_payments
+        description: "The count of failed payment attempts for each customer."
+        tests:
+          - not_null
